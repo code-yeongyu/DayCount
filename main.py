@@ -27,7 +27,7 @@ d_days_info = json.load(json_file)['days']
 d_days = [Time(d_day) for d_day in d_days_info]
 
 for d_day in d_days:
-    date_time_obj = datetime.datetime.strptime(d_day.date, '%Y-%m-%d %H:%M:%S')
+    date_time_obj = datetime.datetime.strptime(d_day.date, '%Y-%m-%d')
     left_time = datetime.datetime.now() - date_time_obj
     print(f'{d_day.name}: ', end="")
     print(f"{bcolors.FAIL}{bcolors.UNDERLINE}{left_time.days}{bcolors.ENDC}")
