@@ -1,6 +1,8 @@
+#!/usr/local/bin/python3
+
 import json
 import datetime
-
+import os
 
 class bcolors:
     HEADER = '\033[95m'
@@ -19,7 +21,7 @@ class Time:
         self.date = date_object["time"]
 
 
-json_file = open('./days.json')
+json_file = open(os.path.dirname(os.path.realpath(__file__))+'/days.json')
 d_days_info = json.load(json_file)['days']
 
 d_days = [Time(d_day) for d_day in d_days_info]
